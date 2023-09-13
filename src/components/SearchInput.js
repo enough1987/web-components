@@ -1,8 +1,6 @@
 import fetchSearch from '../api/search.js';
 import debounce from '../helpers/debounce.js'
-import Store from '../store/Store.js'
-
-const STORE = new Store();
+import { STORE, STOREPROPS } from '../store/Store.js'
 
 class SearchInput extends HTMLElement {
     constructor(...args) {
@@ -36,7 +34,7 @@ class SearchInput extends HTMLElement {
 
                     liElement.addEventListener('click', function (e) {
                         inputElement.value = e.target.textContent;
-                        STORE.set('search', e.target.textContent);
+                        STORE.set(STOREPROPS.SEARCH, e.target.textContent);
                         removeAutocomplite();
                     });
 

@@ -1,3 +1,5 @@
+import { STORE, STOREPROPS } from '../store/Store.js'
+
 class DateInput extends HTMLElement {
     constructor(...args) {
         super(...args);
@@ -12,6 +14,7 @@ class DateInput extends HTMLElement {
 
         const handleInputChage = function () {
             console.log('value: ', this.value);
+            STORE.set(STOREPROPS.DATE, this.value);
         };
     
         inputElement.addEventListener('input', handleInputChage);

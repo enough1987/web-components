@@ -1,6 +1,4 @@
-import Store from '../store/Store.js'
-
-const STORE = new Store();
+import { STORE, STOREPROPS } from '../store/Store.js'
 
 class Glue extends HTMLElement {
     constructor(...args) {
@@ -8,10 +6,17 @@ class Glue extends HTMLElement {
         
         const shadowRoot = this.attachShadow({mode: 'open'});
 
-        let divElement = document.createElement('div');
+        const divElement = document.createElement('div');
+        const searchDiv = document.createElement('div');
+        const dateDiv = document.createElement('div');
+        divElement.appendChild(searchDiv);
+        divElement.appendChild(dateDiv);
 
-        STORE.subscribe('search', function (val) {
-            divElement.innerText = "Search : " + val;
+        STORE.subscribe(STOREPROPS.SEARCH, function (val) {
+            searchDiv.innerText = "Search : " + val;
+        });
+        STORE.subscribe(STOREPROPS.DATE, function (val) {
+            dateDiv.innerText = "Date : " + val;
         })
 
         

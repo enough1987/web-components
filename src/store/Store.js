@@ -3,6 +3,11 @@
 const data = {}
 const subscribers = {};
 
+const STOREPROPS = {
+    SEARCH: 'SEARCH',
+    DATE: "DATE"
+}
+
 class Store {
     constructor() {
         if (!Store._instance) {
@@ -26,3 +31,10 @@ class Store {
 }
 
 export default Store;
+
+const STORE = new Store();
+
+export {
+    STOREPROPS, 
+    STORE
+}
