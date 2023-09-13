@@ -1,0 +1,17 @@
+{
+  "name": "tui",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start": "cd src; live-server --port=8080 --entry-file=src/index.html",
+    "test": "index.test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
