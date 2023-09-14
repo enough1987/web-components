@@ -1,4 +1,5 @@
-import { STORE, STOREPROPS } from '../store/Store.js'
+import { STORE, STOREPROPS } from '../store/Store.js';
+import formatDate from '../helpers/formatDate.js';
 
 class Glue extends HTMLElement {
     constructor(...args) {
@@ -16,7 +17,7 @@ class Glue extends HTMLElement {
             searchDiv.innerText = "Search : " + val;
         });
         STORE.subscribe(STOREPROPS.DATE, function (val) {
-            dateDiv.innerText = "Date : " + val;
+            dateDiv.innerText = "Date : " + formatDate(val);
         })
 
         
